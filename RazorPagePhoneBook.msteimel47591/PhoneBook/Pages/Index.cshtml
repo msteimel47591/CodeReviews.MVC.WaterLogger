@@ -1,0 +1,28 @@
+﻿@page
+@model PhoneBook.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Home</h1>
+
+<table class="table transparent-table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Contact[0].Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Contact[0].PhoneNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.Contact[0].Email)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var contact in Model.Contact)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => contact.Name)</td>
+                <td>@Html.DisplayFor(modelItem => contact.PhoneNumber)</td>
+                <td>@Html.DisplayFor(modelItem => contact.Email)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
